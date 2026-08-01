@@ -1,5 +1,5 @@
 #this is to build the docker image after the test is successful
-name: python-app-with-docker-build
+name: python-app-with-docker-build & verify the image locally
 
 on:
   push:
@@ -48,5 +48,6 @@ jobs:
       - name: Build docker Image
         run: |
           docker build -t python-app:latest .
+          docker run --rm python-app:latest
 
   
