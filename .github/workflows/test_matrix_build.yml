@@ -1,0 +1,54 @@
+name: python test_matrix_build
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10","3.11","3.12"]
+
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: action/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Running Test
+        run: |
+          pytest test_app.py
+
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout respository
+        uses: actions/checkout@v4
+      - name: Build folder
+        run: |
+          mkdir build
+          cp app.py build/
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: python-build
+          path: build/
+      
+
