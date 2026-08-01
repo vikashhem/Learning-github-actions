@@ -17,5 +17,5 @@ jobs:
                 pip install -r requirements.txt
 
             - name: Run Test
-              run: pytest app.py
+              run: pytest test_app.py
 
