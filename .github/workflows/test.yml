@@ -14,7 +14,7 @@ jobs:
                 python-version: '3.12'
             - name: Install dependencies
               run: 
-                pip install requirements.txt
+                pip install -r requirements.txt
 
             - name: Run Test
               run: pytest app.py
