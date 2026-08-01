@@ -1,1 +1,2 @@
-pytest
+pip install --upgrade pip
+pip install pytest
