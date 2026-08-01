@@ -48,6 +48,8 @@ jobs:
       - name: Build docker Image
         run: |
           docker build -t python-app:latest .
-          docker run --rm python-app:latest
+      - name: Verify docker image
+        run: |
+          docker run --rm python-app:latest python 
 
   
