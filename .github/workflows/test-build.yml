@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requirements.txt
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
@@ -48,7 +48,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
-        with:
+        with: 
           name: python-build
           path: build/
            
