@@ -1,0 +1,27 @@
+{
+  "name": "learning-github-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikashhem/Learning-github-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikashhem/Learning-github-actions/issues"
+  },
+  "homepage": "https://github.com/vikashhem/Learning-github-actions#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
